@@ -1,0 +1,65 @@
+{
+  "name": "@alipay/g2plot-schemas",
+  "version": "1.1.21",
+  "scripts": {
+    "start": "webpack-dev-server --port 8989",
+    "build": "rm -rf lib && tsc && npm run assets",
+    "prepublishOnly": "npm run build",
+    "assets": "copyfiles -u 1 src/**/*.less lib/",
+    "lint": "eslint --fix --ext .ts,.tsx ./src",
+    "gen-schema": "node scripts/generate.js",
+    "gen-img": "node scripts/gen-img.js"
+  },
+  "files": [
+    "lib",
+    "schamas"
+  ],
+  "main": "./lib/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "antd": "^3.6.2",
+    "classnames": "^2.2.5",
+    "react": "^16.11.0",
+    "react-color": "^2.17.3",
+    "react-dom": "^16.11.0",
+    "simple-evaluate": "^1.0.2"
+  },
+  "devDependencies": {
+    "@antv/g2plot": "^0.11.0",
+    "@antv/util": "^2.0.6",
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-decorators": "^7.6.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.6.0",
+    "@babel/runtime": "^7.6.3",
+    "@types/classnames": "^2.2.3",
+    "@types/react": "^16.9.9",
+    "@types/react-dom": "^16.9.2",
+    "@typescript-eslint/eslint-plugin": "^2.4.0",
+    "@typescript-eslint/parser": "^2.4.0",
+    "babel-loader": "^8.0.6",
+    "copyfiles": "^2.1.1",
+    "css-loader": "^3.2.0",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.16.0",
+    "less": "^3.10.3",
+    "less-loader": "^5.0.0",
+    "prettier": "^1.18.2",
+    "schema-util": "^3.1.0",
+    "style-loader": "^1.0.0",
+    "typescript": "^3.6.4",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.0"
+  },
+  "publishConfig": {
+    "registry": "http://registry.npm.alibaba-inc.com"
+  }
+}

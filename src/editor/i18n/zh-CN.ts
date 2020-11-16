@@ -1,0 +1,16 @@
+export default {
+  URL_FORMAT_ERROR: 'URL 格式不正确',
+  IMAGE_FORMAT_ERROR: '图片格式不正确',
+  MAX_LENGHT_ERROR: '输入内容要求不得大于 %s 个字符',
+  ARRAY_MAX_LENGHT_ERROR: '列表项数目不能超过 %s 条。',
+  MIN_LENGHT_ERROR: '输入内容要求不得少于 %s 个字符',
+  MAX_NUMBER_ERROR: '输入数字要求不得大于 %s ',
+  MIN_NUMBER_ERROR: '输入数字要求不得小于 %s ',
+  REG_ERROR: '格式错误',
+  EDIT_OBJECT: '编辑',
+  ADD_ARRAY_ITEM: '新增列表项',
+  ARRAY_TOO_LONG_WARN: '数据项太多，剩余的数据未被展示，请直接到页面上查看数据是否正确。',
+  EXPORT_EXCEL: '下载 excel',
+  IMPORT_EXCEL: '导入 excel',
+  CHOOSE_IMAGE: '选择图片',
+};

@@ -1,0 +1,16 @@
+export default {
+  URL_FORMAT_ERROR: 'URL format error',
+  IMAGE_FORMAT_ERROR: 'Image address format error',
+  MAX_LENGHT_ERROR: 'Input content length must less than %s ',
+  ARRAY_MAX_LENGHT_ERROR: 'Array length must less than %s .',
+  MIN_LENGHT_ERROR: 'Input content length must big than %s ',
+  MAX_NUMBER_ERROR: 'Input number must less than %s ',
+  MIN_NUMBER_ERROR: 'Input number must big than %s ',
+  REG_ERROR: 'Data format error',
+  EDIT_OBJECT: 'edit',
+  ADD_ARRAY_ITEM: 'add new item',
+  ARRAY_TOO_LONG_WARN: 'There are too much data, some data not show.',
+  EXPORT_EXCEL: 'Export to excel',
+  IMPORT_EXCEL: 'Import to excel',
+  CHOOSE_IMAGE: 'image',
+};

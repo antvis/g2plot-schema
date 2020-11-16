@@ -1,0 +1,179 @@
+@border-color: #e9e9e9;
+@font-color: #666;
+@font-important-color: #333;
+@font-active-color: #666;
+// 主按钮颜色
+@button-primary-color: #f5af18;
+@label-color: #666;
+@border-active-color: #f5af18;
+@background-active-color: #fff8ef;
+@link-color: #50a4db;
+@selected-color: #ffbc40;
+@moved-color: #fff1e0;
+@header-background-color: #2e3250;
+
+@status-released-color: #87d068;
+@status-editing-color: #2db7f5;
+@status-previewing-color: #af79de;
+@status-approve_waiting-color: #fac450;
+@status-approve_refused-color: #ff6600;
+@status-release_fail-color: #ff6600;
+@status-noop-color: #999;
+@search-input-border-color: #f59f16;
+
+@highlight-font-color: @search-input-border-color;
+@item-color-border-color: #f0f0f0;
+@item-array-background-color: #f4f4f4;
+@item-array-hover-background-color: #f7f7f7;
+@item-array-delete-color: #ff6600;
+@item-color-background-color: #ffffff;
+
+@arrow-gap: 16px;
+
+.schema-editor {
+  padding: 8px 16px;
+  font-size: 14px;
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.85);
+
+  .field-item {
+    margin: 8px 0;
+    padding-left: @arrow-gap;
+  }
+
+  .ui-form-item {
+    display: flex;
+    justify-content: space-between;
+    line-height: 24px;
+
+    .ant-form-item {
+      margin-bottom: 0;
+    }
+
+    .ant-form-item-control {
+      line-height: unset;
+    }
+
+    .ui-label-title {
+      color: rgba(0, 0, 0, 0.85);
+      padding-right: 4px;
+    }
+
+    .ui-label {
+      .anticon {
+        color: rgba(0, 0, 0, 0.45);
+      }
+    }
+  }
+
+  .ant-input {
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.65);
+    border-radius: 3px;
+    border-color: rgba(0, 0, 0, 0.1);
+    &:focus {
+      border-color: #918ced;
+    }
+  }
+
+  .ant-collapse {
+    margin: 8px 0;
+  }
+
+  .ant-collapse > .ant-collapse-item {
+    border: none;
+  }
+
+  .ant-collapse-content > .ant-collapse-content-box {
+    border-bottom: 1px solid #eee;
+  }
+
+  .ant-collapse-borderless > .ant-collapse-item > .ant-collapse-content > .ant-collapse-content-box {
+    margin-left: 0;
+    padding: 0;
+  }
+
+  .ant-collapse > .ant-collapse-item > .ant-collapse-header {
+    padding: 6px 0px 6px @arrow-gap;
+    > .ant-collapse-arrow {
+      left: 0;
+    }
+  }
+
+  .schema-editor-main {
+    height: 100%;
+  }
+
+  // 枚举
+  .field-enum {
+    .ant-select {
+      width: 100px;
+    }
+  }
+
+  .field-string {
+    .ant-input {
+      width: 100px;
+    }
+  }
+
+  .field-number {
+    .ant-input-number {
+      width: 100px;
+    }
+  }
+
+  .field-minmax {
+    .ant-input-number {
+      width: 50px;
+    }
+  }
+
+  /* 颜色 */
+  .field-color {
+    .swatch {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      background: #fff;
+      border-radius: 3px;
+      height: unset;
+      padding: 0 11px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      width: 100px;
+      transition: all 0.3s;
+
+      &:hover {
+        border-color: #40a9ff;
+      }
+
+      .color {
+        margin-right: 8px;
+        width: 18px;
+        height: 18px;
+        background: #000;
+        border-radius: 2px;
+      }
+    }
+  }
+
+  .pasta-color-icon {
+    cursor: pointer;
+    display: inline-block;
+    width: 100%;
+    height: 24px;
+    line-height: 24px;
+    border-radius: 4px;
+    border: 1px solid #d9d9d9;
+    text-align: right;
+    margin-top: 3px;
+    padding-right: 24px;
+  }
+}
+
+.schema-editor-color-picker {
+  .ant-popover-inner-content {
+    padding: 0;
+  }
+}

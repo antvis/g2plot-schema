@@ -1,0 +1,41 @@
+{
+  "extends": [
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "prettier"],
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "jsx": true,
+    "sourceType": "module",
+    "impliedStrict": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "react/jsx-key": 0,
+    "no-debugger": 2,
+    "react/prop-types": 0,
+    "no-sparse-arrays": 0,
+    "no-inner-declarations": 0,
+    "jsx-a11y/heading-has-content": 0,
+    "prettier/prettier": 2,
+    "react/display-name": 0,
+    "@typescript-eslint/indent": [2, 2],
+    "@typescript-eslint/explicit-member-accessibility": [2, { "accessibility": "no-public" }],
+    "@typescript-eslint/no-non-null-assertion": 0,
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/no-use-before-define": [2, { "functions": false }],
+    "@typescript-eslint/no-namespace": 0,
+    "@typescript-eslint/ban-ts-ignore": 0,
+    "@typescript-eslint/no-empty-interface": 1,
+    "@typescript-eslint/camelcase": 0,
+    "react/no-find-dom-node": 0
+  }
+}
