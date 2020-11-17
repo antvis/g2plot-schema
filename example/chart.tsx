@@ -17,7 +17,7 @@ export default React.memo(function Chart(props: Props) {
   }, []);
   React.useEffect(() => {
     if (plot) {
-      plot.updateConfig({ data, ...option });
+      plot.update({ data, ...option });
       plot.render();
     }
   }, [option, data]);

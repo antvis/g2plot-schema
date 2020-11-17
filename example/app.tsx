@@ -5,7 +5,7 @@ import * as G2Plot from '@antv/g2plot';
 import Chart from './chart';
 import * as _ from '@antv/util';
 import * as configs from './configs';
-import { Editor, getSchemaByType } from '../src';
+import { defaultConfigs, Editor, getSchemaByType } from '../src';
 import * as schemas from '../src/schemas/configs';
 import * as types from 'schema-util/lib/types';
 
@@ -13,32 +13,6 @@ types.supported.push('MinMax');
 types.meta.minmax = ['if'];
 import '../src/editor/index.less';
 import './index.less';
-
-const title = {
-  Area: '面积图',
-  StackArea: '堆叠面积图',
-  PercentageStackArea: '百分比堆叠面积图',
-  Bar: '条形图',
-  GroupBar: '分组条形图',
-  StackBar: '堆叠条形图',
-  PercentageStackBar: '百分比堆叠条形图',
-  Column: '柱形图',
-  GroupColumn: '分组柱形图',
-  StackColumn: '堆叠柱形图',
-  PercentageStackColumn: '百分比堆叠柱形图',
-  Line: '折线图',
-  Pie: '饼图',
-  Ring: '环形图',
-  Radar: '雷达图',
-  Bubble: '气泡图',
-  Scatter: '散点图',
-  Funnel: '梯形图',
-  Waterfall: '瀑布图',
-  StepLine: '梯折线图',
-  Heatmap: '热力图',
-  Matrix: '色块热力图',
-  Liquid: '水波图',
-};
 
 const type = location.search.slice(1) || 'Line';
 
@@ -60,19 +34,8 @@ for (const type of Object.keys(schemas)) {
 
 function getOption(type: string) {
   const { data, ...option } = configs[type];
-  console.log(G2Plot[type].getDefaultOptions());
-  return _.deepMix({}, G2Plot[type].getDefaultOptions(), option, {
-    forceFit: false,
-    title: {
-      visible: true,
-      text: title[type],
-    },
-    description: {
-      visible: true,
-      text: `一个简单的${title[type]}`,
-    },
-    width: 560,
-    height: 376,
+  return _.deepMix({}, defaultConfigs[type], option, {
+    autoFit: true
   });
 }
 
@@ -85,18 +48,15 @@ class App extends React.Component {
 
   constructor(props) {
     super(props);
-    console.log(getOption(type));
   }
 
   onChange(data) {
-    console.log(data);
     this.setState({
       option: data,
     });
   }
 
   onTypeChange(type: string) {
-    console.log(getOption(type));
     this.setState({
       type,
       option: getOption(type),

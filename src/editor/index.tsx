@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { isPlainObject, cloneDeep } from 'lodash';
 import Item from './fields/item';
 import validate from './util/validate';
 import clone from './util/clone';
@@ -21,6 +22,24 @@ export interface EditorProps {
 
 interface EditorState {
   data: any;
+}
+
+const replaceVisibleField = (dist: any, src: any, level: number, maxLevel?: number) => {
+  level = level || 0;
+  maxLevel = maxLevel || 5;
+  for (let key in src) {
+    const value = src[key];
+    if (isPlainObject(value)) {
+      if (value.visible === false) {
+        dist[key] = false;
+      } else {
+        dist[key] = replaceVisibleField({}, value, level + 1);
+      }
+    } else {
+      dist[key] = value;
+    }
+  }
+  return dist;
 }
 
 export class Editor extends React.Component<EditorProps, EditorState> {
@@ -57,6 +76,7 @@ export class Editor extends React.Component<EditorProps, EditorState> {
     let tmp = data;
     let tmpSchema = this.props.schema;
     const last = fields.pop();
+
     // modify array
     if (last === undefined && tmpSchema.type === 'array') {
       data = e.value;
@@ -68,7 +88,7 @@ export class Editor extends React.Component<EditorProps, EditorState> {
         }
 
         // if data is null, mock data 或 非数组或对象，都需要 mock
-        if (typeof tmp[item] === 'undefined' || typeof tmp[item] !== 'object') {
+        if (typeof tmp[item] === 'undefined' || typeof tmp[item] !== 'object' || tmp[item] === null) {
           tmp[item] = {};
         }
 
@@ -78,7 +98,9 @@ export class Editor extends React.Component<EditorProps, EditorState> {
     }
 
     if (this.props.onChange) {
-      this.props.onChange(data, e);
+      // visible写法变更
+      const configs = replaceVisibleField({}, cloneDeep(data), 0);
+      this.props.onChange(configs, e);
     }
 
     this.lastItem = e.fields;

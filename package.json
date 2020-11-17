@@ -19,13 +19,14 @@
   "dependencies": {
     "antd": "^3.6.2",
     "classnames": "^2.2.5",
+    "lodash": "^4.17.20",
     "react": "^16.11.0",
     "react-color": "^2.17.3",
     "react-dom": "^16.11.0",
     "simple-evaluate": "^1.0.2"
   },
   "devDependencies": {
-    "@antv/g2plot": "^0.11.0",
+    "@antv/g2plot": "^2.0.9",
     "@antv/util": "^2.0.6",
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
@@ -38,6 +39,7 @@
     "@babel/preset-typescript": "^7.6.0",
     "@babel/runtime": "^7.6.3",
     "@types/classnames": "^2.2.3",
+    "@types/lodash": "^4.14.165",
     "@types/react": "^16.9.9",
     "@types/react-dom": "^16.9.2",
     "@typescript-eslint/eslint-plugin": "^2.4.0",

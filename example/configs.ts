@@ -214,8 +214,8 @@ export const Ring = {
 export const Radar = {
   width: 560,
   height: 376,
-  angleField: 'x',
-  radiusField: 'y',
+  xField: 'x',
+  yField: 'y',
   seriesField: 'serie',
   data: [
     { x: '防御', y: 400, serie: '马可波罗' },
@@ -255,6 +255,66 @@ export const Scatter = {
     stroke: '#777777',
     lineWidth: 1,
   },
+};
+
+export const Histogram = {
+  data: [
+    { value: 1.2 },
+    { value: 3.4 },
+    { value: 3.7 },
+    { value: 4.3 },
+    { value: 5.2 },
+    { value: 5.8 },
+    { value: 6.1 },
+    { value: 6.5 },
+    { value: 6.8 },
+    { value: 7.1 },
+    { value: 7.3 },
+    { value: 7.7 },
+    { value: 8.3 },
+    { value: 8.6 },
+    { value: 8.8 },
+    { value: 9.1 },
+    { value: 9.2 },
+    { value: 9.4 },
+    { value: 9.5 },
+    { value: 9.7 },
+    { value: 10.5 },
+    { value: 10.7 },
+    { value: 10.8 },
+    { value: 11.0 },
+    { value: 11.0 },
+    { value: 11.1 },
+    { value: 11.2 },
+    { value: 11.3 },
+    { value: 11.4 },
+    { value: 11.4 },
+    { value: 11.7 },
+    { value: 12.0 },
+    { value: 12.9 },
+    { value: 12.9 },
+    { value: 13.3 },
+    { value: 13.7 },
+    { value: 13.8 },
+    { value: 13.9 },
+    { value: 14.0 },
+    { value: 14.2 },
+    { value: 14.5 },
+    { value: 15 },
+    { value: 15.2 },
+    { value: 15.6 },
+    { value: 16.0 },
+    { value: 16.3 },
+    { value: 17.3 },
+    { value: 17.5 },
+    { value: 17.9 },
+    { value: 18.0 },
+    { value: 18.0 },
+    { value: 20.6 },
+    { value: 21 },
+    { value: 23.4 },
+  ],
+  binField: 'value'
 };
 
 export const Funnel = {
@@ -401,11 +461,9 @@ export const StepLine = {
 
 export const Heatmap = {
   data: heatmap,
-  xField: 'prob',
-  yField: 'Average annual wage',
-  colorField: 'numbEmployed',
-  radius: 15,
-  intensity: 2,
+  xField: 'name',
+  yField: 'country',
+  colorField: 'value',
 };
 
 export const Matrix = {
@@ -520,4 +578,50 @@ export const Liquid = {
   min: 0,
   max: 10000,
   value: 5639,
+};
+
+export const Box = {
+  data: [
+    { x: '职业 A', low: 20000, q1: 26000, median: 27000, q3: 32000, high: 38000, outliers: [50000, 52000] },
+    { x: '职业 B', low: 40000, q1: 49000, median: 62000, q3: 73000, high: 88000, outliers: [32000, 29000, 106000] },
+    { x: '职业 C', low: 52000, q1: 59000, median: 65000, q3: 74000, high: 83000, outliers: [91000] },
+    { x: '职业 D', low: 58000, q1: 96000, median: 130000, q3: 170000, high: 200000, outliers: [42000, 210000, 215000] },
+    { x: '职业 E', low: 24000, q1: 28000, median: 32000, q3: 38000, high: 42000, outliers: [48000] },
+    { x: '职业 F', low: 47000, q1: 56000, median: 69000, q3: 85000, high: 100000, outliers: [110000, 115000, 32000] },
+    { x: '职业 G', low: 64000, q1: 74000, median: 83000, q3: 93000, high: 100000, outliers: [110000] },
+    { x: '职业 H', low: 67000, q1: 72000, median: 84000, q3: 95000, high: 110000, outliers: [57000, 54000] },
+  ],
+  xField: 'x',
+  yField: ['low', 'q1', 'median', 'q3', 'high'],
+  outliersField: 'outliers',
+  outliersStyle: {
+    fill: '#f6f',
+  },
+}
+
+const dualAxesData = [
+  { year: '1991', value: 3, count: 10 },
+  { year: '1992', value: 4, count: 4 },
+  { year: '1993', value: 3.5, count: 5 },
+  { year: '1994', value: 5, count: 5 },
+  { year: '1995', value: 4.9, count: 4.9 },
+  { year: '1996', value: 6, count: 35 },
+  { year: '1997', value: 7, count: 7 },
+  { year: '1998', value: 9, count: 1 },
+  { year: '1999', value: 13, count: 20 },
+];
+export const DualAxes = {
+  data: [dualAxesData, dualAxesData],
+  xField: 'year',
+  yField: ['value', 'count'],
+  geometryOptions: [
+    {
+      geometry: 'line',
+      color: '#5B8FF9',
+    },
+    {
+      geometry: 'line',
+      color: '#5AD8A6',
+    },
+  ],
 };
