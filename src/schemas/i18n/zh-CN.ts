@@ -91,7 +91,7 @@ export default {
   'shape type': '图形类型',
   'force square': '正方形',
   intensity: '强度',
-  statistic: '数字',
+  statistic: '统计内容',
   'dynamic height': '动态高度',
   'font color': '字体颜色',
   'font size': '字体大小',
@@ -118,5 +118,7 @@ export default {
   'density': '密度',
   'box style': '箱型样式',
   'fill': '填充颜色',
-  'stroke': '描边颜色'
+  'stroke': '描边颜色',
+  'pie ttile': '标题',
+  'pie content': '主题内容'
 };

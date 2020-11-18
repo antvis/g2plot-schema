@@ -1,8 +1,8 @@
 {
-  "name": "@alipay/g2plot-schemas",
+  "name": "@antv/g2plot-schemas",
   "version": "1.1.21",
   "scripts": {
-    "start": "webpack-dev-server --port 8989",
+    "start": "webpack-dev-server --port 8988",
     "build": "rm -rf lib && tsc && npm run assets",
     "prepublishOnly": "npm run build",
     "assets": "copyfiles -u 1 src/**/*.less lib/",

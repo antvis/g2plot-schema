@@ -450,12 +450,10 @@ export function type(lang: Lang = 'zh-CN') {
   }`; 
 }
 
-// Martrix
-
-export function shapeType(lang: Lang = 'zh-CN') {
+export function shape(lang: Lang = 'zh-CN') {
   const t = trans.bind(null, lang);
-  return `shapeType(${t('shape type')}): Enum {
-    rect(${t('rect')})
+  return `shape(${t('shape type')}): Enum {
+    square(${t('rect')})
     circle(${t('circle')})
 }`;
 }
@@ -496,18 +494,6 @@ export function liquidColor(lang: Lang = 'zh-CN') {
   return `color(${t('liquid color')}): Color`;
 }
 
-export function statistic(lang: Lang = 'zh-CN') {
-  const t = trans.bind(null, lang);
-  return `statistic(${t('statistic')}): Object{
-    visible(${t('visible')}): Boolean
-    adjustColor(${t('adjust color')}): Boolean
-    style(${t('style')}): Object{
-      fill(${t('font color')}): Color[if: "!$.__p.adjustColor"]
-      fontSize(${t('font size')}): Number[min: 10]
-    }
-  }`;
-}
-
 export function liquidStyle(lang: Lang = 'zh-CN') {
   const t = trans.bind(null, lang);
   return `liquidStyle(${t('liquid style')}): Object{
@@ -542,5 +528,25 @@ export function boxStyle(lang: Lang = 'zh-CN') {
   fill(${t('fill')}): Color
   stroke(${t('stroke')}): Color
   opacity(${t('opacity')}): Number[min:0, max: 1, step: 0.1]
+}`;
+}
+
+// pie
+export function statistic(lang: Lang = 'zh-CN') {
+  const t = trans.bind(null, lang);
+  return `statistic(${t('statistic')}): Object {
+  visible(${t('visible')}): Boolean
+  title(${t('pie title')}): Object[if: "$.visible"] {
+    visible(${t('visible')}): Boolean
+    offsetX(${t('x offset')}): Number[if: "$.visible"]
+    offsetY(${t('y offset')}): Number[if: "$.visible"]
+    rotate(${t('rotate')}): Number[if: "$.visible", max: 90]
+  }
+  content(${t('pie content')}): Object[if: "$.visible"] {
+    visible(${t('visible')}): Boolean
+    offsetX(${t('x offset')}): Number[if: "$.visible"]
+    offsetY(${t('y offset')}): Number[if: "$.visible"]
+    rotate(${t('rotate')}): Number[if: "$.visible", max: 90]
+  }
 }`;
 }

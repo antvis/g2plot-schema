@@ -37,7 +37,7 @@ export const Column = [
   'yAxis',
 ];
 
-export const Pie = ['radius', 'innerRadius', 'legend', ['label', 'Pie'], ['tooltip', 0]];
+export const Pie = ['radius', 'innerRadius', 'statistic', 'legend', ['label', 'Pie'], ['tooltip', 0]];
 
 export const Radar = [
   'radius',
@@ -54,6 +54,7 @@ export const Radar = [
 export const Scatter = [
   ['legend', false, 'colorField'],
   'size',
+  'shape',
   'pointStyle',
   ['label', 'Column'],
   ['tooltip', 0],
