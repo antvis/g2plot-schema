@@ -1,6 +1,6 @@
 {
   "name": "@antv/g2plot-schemas",
-  "version": "1.1.21",
+  "version": "1.1.22",
   "scripts": {
     "start": "webpack-dev-server --port 8988",
     "build": "rm -rf lib && tsc && npm run assets",
