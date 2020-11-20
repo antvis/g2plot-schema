@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { Collapse, Icon } from 'antd';
+import { isPlainObject } from 'lodash';
 import evaluate from '../util/evaluate';
 import Item, { FieldProps } from './item';
 
@@ -52,7 +53,7 @@ export default class FieldObject extends React.Component<FieldProps, FieldObject
     const { schema, data, validate, size, lang } = itemProps;
     const props = schema.properties.visible;
     if (props) {
-      const itemVal = data ? data.visible : false;
+      const itemVal = data ? isPlainObject(data) : false;
       const type = props.type;
       const itemProps = {
         key: `${field}.visible`,
@@ -76,7 +77,7 @@ export default class FieldObject extends React.Component<FieldProps, FieldObject
   getVisibleValue(itemProps) {
     const { data } = itemProps;
 
-    return data ? data.visible : false;
+    return data ? isPlainObject(data) : false;
   }
 
   getItem(field: string) {

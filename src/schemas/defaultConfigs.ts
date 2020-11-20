@@ -281,3 +281,34 @@ export const Waterfall = {
     fill: 'rgba(0, 0, 0, 0.25)',
   },
 };
+
+export const Heatmap = assign({}, commonOptions, {
+  type: 'polygon',
+  legend: false,
+  xAxis: {
+    tickLine: null,
+    line: null,
+    grid: {
+      alignTick: false,
+      line: {
+        style: {
+          lineWidth: 1,
+          lineDash: null,
+          stroke: '#f0f0f0',
+        },
+      },
+    },
+  },
+  yAxis: {
+    grid: {
+      alignTick: false,
+      line: {
+        style: {
+          lineWidth: 1,
+          lineDash: null,
+          stroke: '#f0f0f0',
+        },
+      },
+    },
+  },
+});
