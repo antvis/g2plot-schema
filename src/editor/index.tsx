@@ -27,7 +27,7 @@ interface EditorState {
 const replaceVisibleField = (dist: any, src: any, level: number, maxLevel?: number) => {
   level = level || 0;
   maxLevel = maxLevel || 5;
-  for (let key in src) {
+  for (const key in src) {
     const value = src[key];
     if (isPlainObject(value)) {
       if (value.visible === false) {
@@ -40,7 +40,7 @@ const replaceVisibleField = (dist: any, src: any, level: number, maxLevel?: numb
     }
   }
   return dist;
-}
+};
 
 export class Editor extends React.Component<EditorProps, EditorState> {
   private lastItem: string[] | null = null;

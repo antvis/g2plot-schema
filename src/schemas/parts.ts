@@ -447,7 +447,7 @@ export function type(lang: Lang = 'zh-CN') {
   return `type(${t('heatmap type')}): Enum {
     polygon(${t('polygon')})
     density(${t('density')})
-  }`; 
+  }`;
 }
 
 export function shape(lang: Lang = 'zh-CN') {
@@ -519,7 +519,6 @@ export function value(lang: Lang = 'zh-CN') {
   const t = trans.bind(null, lang);
   return `value(${t('value')}): Number`;
 }
-
 
 /** box */
 export function boxStyle(lang: Lang = 'zh-CN') {

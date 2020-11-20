@@ -9,15 +9,7 @@ export const Line = [
   'yAxis',
 ];
 
-export const Area = [
-  'smooth',
-  ['legend', false, 'seriesField'],
-  ['label', 'Area'],
-  'point',
-  'line',
-  'xAxis',
-  'yAxis',
-];
+export const Area = ['smooth', ['legend', false, 'seriesField'], ['label', 'Area'], 'point', 'line', 'xAxis', 'yAxis'];
 
 export const Bar = [
   'barWidthRatio',
@@ -86,23 +78,9 @@ export const Waterfall = [
   ['tooltip', 0],
 ];
 
-export const Heatmap = [
-  ['legend', true],
-  'type',
-  'label',
-  ['tooltip', 0],
-  'xAxis',
-  'yAxis',
-];
+export const Heatmap = [['legend', true], 'type', 'label', ['tooltip', 0], 'xAxis', 'yAxis'];
 
-export const Histogram = [
-  'binNumber',
-  'binWidth',
-  ['label', 'Bar'],
-  ['tooltip', 0],
-  'xAxis',
-  'yAxis',
-];
+export const Histogram = ['binNumber', 'binWidth', ['label', 'Bar'], ['tooltip', 0], 'xAxis', 'yAxis'];
 
 // export const Liquid = [
 //   'liquidMin',
@@ -113,16 +91,8 @@ export const Histogram = [
 //   'statistic',
 // ];
 
-export const Box = [
-  'boxStyle',
-  'xAxis',
-  'yAxis',
-];
+export const Box = ['boxStyle', 'xAxis', 'yAxis'];
 
-export const DualAxes = [
-  ['legend', false],
-  'xAxis',
-  'yAxis',
-];
+export const DualAxes = [['legend', false], 'xAxis', 'yAxis'];
 
 // export const Gauge = ['percent', 'radius', 'innerRadius', 'startAngle', 'endAngle'];

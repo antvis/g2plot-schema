@@ -1,6 +1,6 @@
 import * as schemas from './configs';
-export * as defaultConfigs from './defaultConfigs';
 import { compose } from './utils';
+import * as defaultConfigs from './defaultConfigs';
 
 export function getSchemaByType(type: string, language: Lang): string | undefined {
   if (!schemas[type]) return;
@@ -8,3 +8,5 @@ export function getSchemaByType(type: string, language: Lang): string | undefine
 }
 
 export type Lang = 'zh-CN' | 'en-US';
+
+export { defaultConfigs };

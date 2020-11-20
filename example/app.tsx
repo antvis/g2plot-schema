@@ -1,7 +1,6 @@
 import * as React from 'react';
 import * as schemaUtil from 'schema-util';
 import { Select } from 'antd';
-import * as G2Plot from '@antv/g2plot';
 import Chart from './chart';
 import * as _ from '@antv/util';
 import * as configs from './configs';
