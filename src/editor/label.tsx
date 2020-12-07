@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Tooltip, Icon } from 'antd';
+import { Tooltip } from 'antd';
+import { InfoCircleOutlined } from '@ant-design/icons';
 
 interface Props {
   title: string;
@@ -14,7 +15,7 @@ export default function Label({ title, tip }: Props) {
       </span>
       {tip && (
         <Tooltip title="tip">
-          <Icon type="info-circle" />
+          <InfoCircleOutlined />
         </Tooltip>
       )}
     </div>

@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { Collapse, Icon } from 'antd';
+import { Collapse } from 'antd';
 import { isPlainObject } from 'lodash';
+import { CaretRightOutlined } from '@ant-design/icons';
 import evaluate from '../util/evaluate';
 import Item, { FieldProps } from './item';
 
@@ -130,7 +131,7 @@ export default class FieldObject extends React.Component<FieldProps, FieldObject
             key={field}
             onChange={this.onExpand.bind(this, field)}
             activeKey={this.state[field]}
-            expandIcon={({ isActive }) => <Icon type="caret-right" rotate={isActive ? 90 : 0} />}
+            expandIcon={({ isActive }) => <CaretRightOutlined rotate={isActive ? 90 : 0} />}
           >
             <Panel key={field} disabled={!visibleValue} header={props.description} extra={visibleItem}>
               <div className={`field-item field-${fieldType}`}>{item}</div>
