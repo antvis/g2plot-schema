@@ -15,7 +15,7 @@ export interface FieldProps {
   schema: any;
   validate(...args: any[]): any;
   onChange(e: any): void;
-  size: 'small' | 'large' | 'default';
+  size: 'small' | 'large' | 'middle';
   lang: Language;
 
   title?: string | null;
