@@ -389,7 +389,7 @@ export function transpose(lang: Lang = 'zh-CN') {
 // WaterFull
 export function total(lang: Lang = 'zh-CN') {
   const t = trans.bind(null, lang);
-  return `showTotal(${t('total')}): Object{
+  return `total(${t('total')}): Object[if: "$.visible"] {
   visible(${t('visible')}): Boolean
   label(${t('text')}): String[if: "$.visible"]
 }`;
@@ -533,7 +533,7 @@ export function boxStyle(lang: Lang = 'zh-CN') {
 // pie
 export function statistic(lang: Lang = 'zh-CN') {
   const t = trans.bind(null, lang);
-  return `statistic(${t('statistic')}): Object {
+  return `statistic(${t('statistic')}): Object[if: "$.visible"] {
   visible(${t('visible')}): Boolean
   title(${t('pie title')}): Object[if: "$.visible"] {
     visible(${t('visible')}): Boolean

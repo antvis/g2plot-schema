@@ -101,7 +101,11 @@ export default class FieldObject extends React.Component<FieldProps, FieldObject
     const ifState = props.meta ? props.meta.if : null;
     if (ifState) {
       try {
-        const shouldShow = evaluate({ ...(data || {}), __p: parentData }, ifState);
+        const currentProps = data || {};
+        if (/\$\.visible/.test(ifState)) {
+          currentProps.visible = true;
+        }
+        const shouldShow = evaluate({ ...currentProps, __p: parentData }, ifState);
         if (!shouldShow) {
           return null;
         }
@@ -152,7 +156,6 @@ export default class FieldObject extends React.Component<FieldProps, FieldObject
         const itemField = this.getItem(field);
         return itemField;
       });
-
     return items;
   }
   render() {
