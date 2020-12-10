@@ -12,7 +12,7 @@ function isEmpty(value: any) {
 
 // 数值输入框
 export default class NumberField extends React.Component<FieldProps> {
-  handleChange(value?: number) {
+  handleChange(value?: number | string) {
     const field = this.props.field;
     // 兼容以前，返回 string 类型
     this.props.onChange({ value: isEmpty(value) ? undefined : value, fields: [field] });

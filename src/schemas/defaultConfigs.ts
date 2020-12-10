@@ -81,6 +81,9 @@ export const Pie = assign({}, commonOptions, {
     showTitle: false,
     showMarkers: false,
   },
+  label: {
+    layout: { type: 'limit-in-plot', cfg: { action: 'ellipsis' } },
+  },
   /** 饼图样式, 不影响暗黑主题 */
   pieStyle: {
     stroke: 'white',
@@ -89,14 +92,14 @@ export const Pie = assign({}, commonOptions, {
   /** 饼图中心文本默认样式 */
   statistic: {
     title: {
-      style: { fontWeight: 300, color: '#4B535E', textAlign: 'center', fontSize: 20, lineHeight: 1 },
+      style: { fontWeight: 300, color: '#4B535E', textAlign: 'center', fontSize: '20px', lineHeight: 1 },
     },
     content: {
       style: {
         fontWeight: 'bold',
         color: 'rgba(44,53,66,0.85)',
         textAlign: 'center',
-        fontSize: 32,
+        fontSize: '32px',
         lineHeight: 1,
       },
     },
@@ -110,7 +113,7 @@ export const Pie = assign({}, commonOptions, {
         },
       },
     },
-  },
+  }
 });
 
 export const Radar = assign({}, commonOptions, {
@@ -256,7 +259,7 @@ export const Histogram = assign({}, commonOptions, {
   interactions: [{ type: 'active-region' }],
 });
 
-export const Waterfall = {
+export const Waterfall = assign({}, commonOptions, {
   /** default: show label */
   label: {},
   /** default: show leaderLine */
@@ -280,7 +283,16 @@ export const Waterfall = {
   waterfallStyle: {
     fill: 'rgba(0, 0, 0, 0.25)',
   },
-};
+  yAxis: {
+    grid: {
+      line: {
+        style: {
+          lineDash: [4, 2],
+        },
+      },
+    },
+  },
+});
 
 export const Heatmap = assign({}, commonOptions, {
   type: 'polygon',

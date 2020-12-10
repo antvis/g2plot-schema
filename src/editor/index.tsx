@@ -15,7 +15,7 @@ export interface EditorProps {
   schema: any;
   validate(...args: []): any;
   lang: Language;
-  size: 'small' | 'large' | 'default';
+  size: 'small' | 'large' | 'middle';
   onChange(value: any, meta: ChangeMeta): void;
   onError?(e: any): void;
 }

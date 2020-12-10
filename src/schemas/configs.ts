@@ -1,15 +1,24 @@
 export const Line = [
   'smooth',
+  'point',
   'lineStyle',
   ['legend', false, 'seriesField'],
   ['label', 'Line'],
-  'point',
   ['tooltip', 'seriesField'],
   'xAxis',
   'yAxis',
 ];
 
-export const Area = ['smooth', ['legend', false, 'seriesField'], ['label', 'Area'], 'point', 'line', 'xAxis', 'yAxis'];
+export const Area = [
+  'smooth',
+  'point',
+  'line',
+  ['legend', false, 'seriesField'],
+  ['label', 'Area'],
+  ['tooltip', 'seriesField'],
+  'xAxis',
+  'yAxis'
+];
 
 export const Bar = [
   'barWidthRatio',
@@ -69,16 +78,16 @@ export const Waterfall = [
   'fallingFill',
   'columnWidthRatio',
   'waterfallStyle',
-  'xAxis',
-  'yAxis',
   'label',
   'total',
   'leaderLine',
   'labelMode',
   ['tooltip', 0],
+  'xAxis',
+  'yAxis',
 ];
 
-export const Heatmap = [['legend', true], 'type', 'label', ['tooltip', 0], 'xAxis', 'yAxis'];
+export const Heatmap = ['type', ['legend', true], 'label', ['tooltip', 0], 'xAxis', 'yAxis'];
 
 export const Histogram = ['binNumber', 'binWidth', ['label', 'Bar'], ['tooltip', 0], 'xAxis', 'yAxis'];
 

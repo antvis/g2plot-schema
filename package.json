@@ -1,6 +1,6 @@
 {
   "name": "@antv/g2plot-schemas",
-  "version": "1.1.22",
+  "version": "1.2.0",
   "scripts": {
     "start": "webpack-dev-server --port 8988",
     "build": "rm -rf lib && tsc && npm run assets",
@@ -17,7 +17,8 @@
   "main": "./lib/index.js",
   "license": "MIT",
   "dependencies": {
-    "antd": "^3.6.2",
+    "@ant-design/icons": "^4.3.0",
+    "antd": "^4.8.6",
     "classnames": "^2.2.5",
     "lodash": "^4.17.20",
     "react": "^16.11.0",
