@@ -31,9 +31,8 @@ export default class Enums extends React.Component<FieldProps> {
         size={size}
         showSearch
         dropdownClassName="schema-editor-select-option"
-        placeholder="请输入关键字进行筛选"
+        placeholder=''
         optionFilterProp="children"
-        notFoundContent="无法找到"
         value={data}
         onChange={this.handleSelect.bind(this)}
       >
