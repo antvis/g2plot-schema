@@ -1,9 +1,36 @@
 import * as React from 'react';
 import { Collapse } from 'antd';
-import { isPlainObject } from 'lodash';
-import { CaretRightOutlined } from '@ant-design/icons';
+import isPlainObject from 'lodash/isPlainObject';
+import CaretRightOutlined from '@ant-design/icons/CaretRightOutlined';
 import evaluate from '../util/evaluate';
-import Item, { FieldProps } from './item';
+import Textfield from './textfield';
+import Color from './color';
+import Switch from './switch';
+import Enum from './enum';
+import MinMax from './min-max';
+import NumberFiled from './number';
+import { FieldProps } from './types';
+
+function getItem(type: string, props: FieldProps) {
+  // 根据不同的输入类型选择对应的处理模块
+  switch (type) {
+    case 'boolean':
+      // @ts-ignore
+      return <Switch {...props} />;
+    case 'color':
+      return <Color {...props} />;
+    case 'enum':
+      return <Enum {...props} />;
+    case 'number':
+      return <NumberFiled {...props} />;
+    case 'minmax':
+      return <MinMax {...props} />;
+    case 'object':
+      return <FieldObject {...props} />;
+    default:
+      return <Textfield {...props} />;
+  }
+}
 
 const { Panel } = Collapse;
 
@@ -70,7 +97,7 @@ export default class FieldObject extends React.Component<FieldProps, FieldObject
         validate,
         size,
       };
-      return Item.getItem(type, itemProps);
+      return getItem(type, itemProps);
     }
     return null;
   }
@@ -114,7 +141,7 @@ export default class FieldObject extends React.Component<FieldProps, FieldObject
         // 忽略错误
       }
     }
-    let item: any = Item.getItem(fieldType, itemProps);
+    let item: any = getItem(fieldType, itemProps);
     let visibleItem: any = null;
     let visibleValue = true;
     if (hasVisibleProperty(itemProps.schema)) {

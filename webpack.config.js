@@ -1,5 +1,7 @@
 /* eslint-disable */
 const path = require('path');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 module.exports = {
   mode: 'development',
   devtool: 'cheap-module-source-map',
@@ -16,6 +18,7 @@ module.exports = {
     'react-dom': 'ReactDOM',
     antd: 'antd',
     moment: 'moment',
+    '@antv/g2plot': 'G2Plot',
   },
   target: 'web',
   resolve: {
@@ -39,6 +42,22 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new BundleAnalyzerPlugin(
+      {
+         analyzerMode: 'server',
+         analyzerHost: '127.0.0.1',
+         analyzerPort: 8889,
+         reportFilename: 'report.html',
+         defaultSizes: 'parsed',
+         openAnalyzer: true,
+         generateStatsFile: false,
+         statsFilename: 'stats.json',
+         statsOptions: null,
+         logLevel: 'info'
+      }
+  ),
+  ],
   devServer: {
     disableHostCheck: true,
     host: '0.0.0.0',

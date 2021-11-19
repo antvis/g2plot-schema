@@ -1,4 +1,4 @@
-import { assign } from 'lodash';
+import assign from 'lodash/assign';
 const commonOptions = {
   renderer: 'canvas',
   xAxis: {

@@ -6,22 +6,7 @@ import Enum from './enum';
 import MinMax from './min-max';
 import NumberFiled from './number';
 import ObjectField from './object';
-import { Language } from '../i18n';
-
-export interface FieldProps {
-  field?: string;
-  parentData?: any;
-  data: any;
-  schema: any;
-  validate(...args: any[]): any;
-  onChange(e: any): void;
-  size: 'small' | 'large' | 'middle';
-  lang: Language;
-
-  title?: string | null;
-  onClick?(e): void;
-  key?: string;
-}
+import { FieldProps } from './types';
 
 function getItem(type: string, props: FieldProps) {
   // 根据不同的输入类型选择对应的处理模块

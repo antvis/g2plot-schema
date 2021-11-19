@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Switch } from 'antd';
-import { FieldProps } from './item';
+import { FieldProps } from './types';
 import Label from '../label';
 
 interface Props extends FieldProps {

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { InputNumber } from 'antd';
-import { FieldProps } from './item';
+import { FieldProps } from './types';
 import Label from '../label';
 
 export default function Size(props: FieldProps) {

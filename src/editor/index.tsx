@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { isPlainObject, cloneDeep } from 'lodash';
+import cloneDeep from 'lodash/cloneDeep';
+import isPlainObject from 'lodash/isPlainObject';
 import Item from './fields/item';
 import validate from './util/validate';
 import clone from './util/clone';
