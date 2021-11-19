@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { InputNumber, Form } from 'antd';
 import classnames from 'classnames';
-import { FieldProps } from './item';
+import { FieldProps } from './types';
 import Label from '../label';
 
 const FormItem = Form.Item;

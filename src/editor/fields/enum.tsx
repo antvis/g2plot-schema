@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Select } from 'antd';
 import Label from '../label';
-import { FieldProps } from './item';
+import { FieldProps } from './types';
 
 const { Option } = Select;
 

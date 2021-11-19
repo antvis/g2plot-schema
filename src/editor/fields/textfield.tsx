@@ -3,7 +3,7 @@ import { Input, Form } from 'antd';
 const FormItem = Form.Item;
 import classnames from 'classnames';
 import Label from '../label';
-import { FieldProps } from './item';
+import { FieldProps } from './types';
 
 // 文本输入框
 export default class Textfield extends React.Component<FieldProps> {

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Popover } from 'antd';
-import { FieldProps } from './item';
+import { FieldProps } from './types';
 import SketchPicker from 'react-color/lib/Sketch';
 import Label from '../label';
 
